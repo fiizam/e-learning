@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { 
   LayoutDashboard, BookOpen, Calendar, GraduationCap, 
   LogOut, Bell, Menu, X, Search, Pin, PinOff,
-  Settings, HelpCircle, ChevronRight,
+  Settings, HelpCircle, ChevronRight, Heart, Code,
   // Icon tambahan untuk fitur baru
   Book, MessageSquare, Trophy, Megaphone 
 } from 'lucide-vue-next';
@@ -227,8 +227,34 @@ const handleLogout = () => {
         </div>
       </header>
 
-      <div class="flex-1 overflow-y-auto p-4 lg:p-8 scroll-smooth custom-scrollbar-light">
-        <slot />
+      <div class="flex-1 overflow-y-auto scroll-smooth custom-scrollbar-light flex flex-col">
+        <div class="flex-1 p-4 lg:p-8">
+          <slot />
+        </div>
+
+        <footer class="py-6 px-4 lg:px-8 border-t border-slate-200 bg-white/60 backdrop-blur-sm mt-auto">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-white shadow-md">
+                <Code :size="16" />
+              </span>
+              <p class="text-sm text-slate-500 font-medium">
+                &copy; 2025 <span class="text-slate-800 font-bold">SMK Negeri 09</span>.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-sm font-medium text-slate-500">
+              <span>Created with</span>
+              <Heart :size="14" class="text-rose-500 fill-rose-500 animate-pulse" />
+              <span>by</span>
+              <a href="#" class="px-2.5 py-1 bg-indigo-50 text-indigo-600 rounded-md font-bold hover:bg-indigo-100 transition-colors border border-indigo-100 shadow-sm">
+                Phyzam
+              </a>
+            </div>
+
+          </div>
+        </footer>
       </div>
 
     </main>

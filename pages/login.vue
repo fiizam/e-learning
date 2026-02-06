@@ -256,7 +256,7 @@ const handleLogin = async () => {
       </div>
 
       <div class="absolute bottom-6 left-0 w-full text-center">
-        <p class="text-xs text-slate-400 font-medium">&copy; {{ new Date().getFullYear() }} SMK Negeri 09. All Rights Reserved.</p>
+        <p class="text-xs text-slate-400 font-medium">&copy; {{ new Date().getFullYear() }} SMK Negeri 09. All Rights Reserved. Create By Phyzam</p>
       </div>
 
     </div>

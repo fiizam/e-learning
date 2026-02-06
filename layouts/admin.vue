@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { 
   LayoutDashboard, Users, BookOpen, LogOut, 
   Settings, ChevronRight, GraduationCap, Layers,
-  Bell, Search, Menu
+  Bell, Search, Menu, Heart, Code
 } from 'lucide-vue-next';
 import { useAuthStore } from '~/stores/auth';
 
@@ -177,11 +177,38 @@ const menuItems = [
         </div>
       </header>
 
-      <div class="flex-1 overflow-y-auto p-8 scroll-smooth">
-        <div class="max-w-7xl mx-auto">
-          <slot />
+      <div class="flex-1 overflow-y-auto scroll-smooth flex flex-col">
+        <div class="flex-1 p-8">
+          <div class="max-w-7xl mx-auto">
+            <slot />
+          </div>
         </div>
+
+        <footer class="py-6 px-8 border-t border-slate-200 bg-white/50 backdrop-blur-sm mt-auto">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white shadow-md">
+                <Code :size="16" />
+              </span>
+              <p class="text-sm text-slate-500 font-medium">
+                &copy; 2025 <span class="text-slate-800 font-bold">SMK Negeri 09</span> System.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-sm font-medium text-slate-500">
+              <span>Created with</span>
+              <Heart :size="14" class="text-rose-500 fill-rose-500 animate-pulse" />
+              <span>by</span>
+              <a href="https://x.com/phyzam_me" class="px-2.5 py-1 bg-indigo-50 text-indigo-600 rounded-md font-bold hover:bg-indigo-100 transition-colors border border-indigo-100 shadow-sm">
+                Phyzam
+              </a>
+            </div>
+
+          </div>
+        </footer>
       </div>
+      
     </main>
   </div>
 </template>
