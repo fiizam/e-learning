@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif; /* Menggunakan font modern */
+
+  --color-smk-dark: #0f172a;
+  --color-smk-primary: #4f46e5;
+  --color-smk-accent: #0ea5e9;
+  --color-surface: #ffffff;
+  --color-background: #f8fafc;
+  
+  /* Custom Easing untuk animasi halus */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base Setup */
+body {
+  background-color: var(--color-background);
+  color: #334155;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Page Transition (Vue Built-in) */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease-out;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px); /* Efek naik sedikit */
+}
+
+/* Animasi Custom Keyframes */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Scrollbar Cantik */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
